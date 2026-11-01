@@ -50,6 +50,11 @@ export default function Navbar() {
                   <p className="font-semibold">{userData?.email}</p>
                 </Link>
               </DropdownItem>
+              <DropdownItem textValue="change password" key="change-password">
+                <Link className="block" to="/change-password">
+                  Change Password
+                </Link>
+              </DropdownItem>
               <DropdownItem textValue="logout" onPress={logout} key="logout" color="danger">
                 Log Out
               </DropdownItem>

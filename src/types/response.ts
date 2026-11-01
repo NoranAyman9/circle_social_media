@@ -22,7 +22,9 @@ export type GetPostsResponse = Response<{ posts: PostI[] }> & {
 
 export type CreateCommentResponse = Response<{ comment: CommentI }>
 export type UpdateCommentResponse = CreateCommentResponse
-export type DeleteCommentResponse = Response<{}>
+export type DeleteCommentResponse = Response<Record<string, never>>
 
 export type GetPostResponse = Response<{ post: PostI }>
 export type GetPostCommentsResponse = Response<{ comments: CommentI[] }>
+
+export type ChangePasswordResponse = Response<{ token: string }>

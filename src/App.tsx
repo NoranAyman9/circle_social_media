@@ -13,6 +13,7 @@ import ProtectedAuthRoute from "./protectedRoutes/ProtectedAuthRoute";
 import CounterContextProvider from "./contexts/counterContext";
 import AuthContextProvider from "./contexts/authContext";
 import PostDetails from "./pages/PostDetails";
+import ChangePassword from "./pages/ChangePassword"; // NEW
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { queryClient } from "./lib/queryClient";
@@ -57,6 +58,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Profile />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "change-password",
+        element: (
+          <ProtectedRoute>
+            <ChangePassword />
           </ProtectedRoute>
         ),
       },

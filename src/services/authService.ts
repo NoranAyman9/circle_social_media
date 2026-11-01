@@ -1,6 +1,8 @@
 import axios from "axios";
 import type { RegisterData } from "../types/registerData";
 import type { LoginData } from "../types/loginData";
+import type { ChangePasswordData } from "../types/changePasswordData"; // NEW
+import type { ChangePasswordResponse } from "../types/response"; // NEW
 
 
 class AuthServices {
@@ -30,6 +32,19 @@ class AuthServices {
                 token: localStorage.getItem("token")
             }
         })
+        return data;
+    }
+
+    async changePassword(passwordData: ChangePasswordData): Promise<ChangePasswordResponse> {
+        const { data } = await axios.patch(
+            "https://route-posts.routemisr.com/users/change-password",
+            passwordData,
+            {
+                headers: {
+                    token: localStorage.getItem("token")
+                }
+            }
+        )
         return data;
     }
 
